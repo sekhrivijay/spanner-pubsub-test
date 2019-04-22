@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+}
+
+group 'com.ftd'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url "https://artifactory.ftdi.com/artifactory/libs-release-local"
+        credentials {
+            username "user"
+            password "Ftd!@3"
+        }
+
+    }
+}
+
+
+
+dependencies {
+    compile group: 'io.grpc', name: 'grpc-auth', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-protobuf', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-protobuf-lite', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-core', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-context', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-netty-shaded', version: '1.14.0'
+    compile group: 'io.grpc', name: 'grpc-stub', version: '1.14.0'
+    compile(group: 'com.simba.cloudspanner', name: 'SpannerJDBC', version: '1.0.11.1023', ext: "jar")
+
+    //compile group: 'com.google.cloud', name: 'google-cloud-spanner', version: '1.10.0'
+
+    // https://mvnrepository.com/artifact/nl.topicus/spanner-jdbc
+    compile group: 'nl.topicus', name: 'spanner-jdbc', version: '1.1.4'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.5'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.7.5'
+
+
+
+
+    compile("com.google.cloud:google-cloud-pubsub:1.49.0") {
+        exclude group: 'io.grpc'
+    }
+}
