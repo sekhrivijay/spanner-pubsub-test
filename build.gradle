@@ -13,8 +13,8 @@ repositories {
     maven {
         url "https://artifactory.ftdi.com/artifactory/libs-release-local"
         credentials {
-            username "user"
-            password "Ftd!@3"
+            username "XXXX"
+            password "XXXX"
         }
 
     }
